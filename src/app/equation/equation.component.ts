@@ -28,8 +28,14 @@ export class EquationComponent {
   }
 
   ngOnInit() {
-    console.log(this.mathForm.statusChanges.subscribe((value)=>{
-      console.log(value)
+    console.log(this.mathForm.statusChanges.subscribe((value) => {
+      if (value === 'INVALID') {
+        return
+      }
+      this.mathForm.controls.a.setValue(this.randomNumber())
+      this.mathForm.controls.b.setValue(this.randomNumber())
+      this.mathForm.controls.answer.setValue('')
+
     }))
 
   }
