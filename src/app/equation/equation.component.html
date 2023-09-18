@@ -1,8 +1,8 @@
 <form [formGroup]="mathForm">
-    {{mathForm.controls.a.value}} + {{mathForm.value.b}} =
+    <div class="equation"> {{mathForm.controls.a.value}} + {{mathForm.value.b}} =</div>
     <input formControlName="answer" />
 </form>
-{{secondsPerCount | number:'1.1-3'}}
+<div class="stats">{{secondsPerCount | number:'1.1-3'}}</div>
 <hr>
 <div>Form is valid: {{mathForm.valid}}</div>
 <div>Form valuse : {{mathForm.value | json}}</div>
