@@ -28,7 +28,7 @@ export class EquationComponent {
   }
 
   ngOnInit() {
-    
+
 
     console.log(this.mathForm.statusChanges.pipe(
       filter(value => value === 'VALID'),
@@ -40,8 +40,8 @@ export class EquationComponent {
         }
 
       }, { problemSolved: 0, startTime: new Date() })
-    ).subscribe(({problemSolved,startTime}) => {
-      
+    ).subscribe(({ problemSolved, startTime }) => {
+
       this.secondsPerCount = (new Date().getTime() - startTime.getTime()) / problemSolved / 1000
 
       this.mathForm.controls.a.setValue(this.randomNumber())
